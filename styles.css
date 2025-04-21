@@ -1,0 +1,295 @@
+/* Basic styles for the body */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6fa;
+  color: #222;
+}
+
+/* Header styles */
+/* Header styles */
+header {
+  background-color: #2d3e50;
+  color: #fff;
+  padding: 1.5rem 0 3rem; /* Extra padding at the bottom to account for the nav bar */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the header text horizontally */
+  justify-content: flex-start; /* Aligns the content to the top of the nav bar */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative; /* Allows positioning of child elements */
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #1a2533;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Positions the nav relative to the header */
+  bottom: 0; /* Locks the nav to the bottom of the header */
+  left: 0;
+  width: 100%; /* Ensures the nav spans the full width of the header */
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #4fc3f7;
+  color: #1a2533;
+}
+
+/* About Me section styles */
+.about-me {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  padding: 2rem 2.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+  text-align: left;
+}
+
+.about-me h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.about-me p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* Projects section styles */
+.projects-section {
+  max-width: 90%; /* Ensures uniform width with other sections */
+  margin: 2.5rem auto; /* Centers the section horizontally */
+  padding: 2rem; /* Adds internal spacing */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+  text-align: center; /* Centers the title */
+}
+
+.projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Projects list styles */
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; /* Centers the project tiles */
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Removes default list styling */
+}
+
+/* Individual project card styles */
+.projects-list article {
+  background: #f9fbfd;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(44, 62, 80, 0.06);
+  padding: 1.5rem 1.2rem;
+  width: 320px; /* Fixed width for uniform tiles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.projects-list article:hover {
+  box-shadow: 0 4px 16px rgba(44, 62, 80, 0.13);
+}
+
+/* Project image and caption styles */
+.projects-list figure {
+  margin: 0 0 1rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+.projects-list img {
+  border-radius: 6px;
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.08);
+}
+
+.projects-list figcaption {
+  font-size: 0.98rem;
+  color: #4fc3f7;
+  margin-top: 0.4rem;
+}
+
+/* Project title styles */
+.projects-list h3 {
+  margin: 0.7rem 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #2d3e50;
+  text-align: center;
+}
+
+/* Project description styles */
+.projects-list p {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 1.1rem;
+}
+
+/* Project link button styles */
+.projects-list a {
+  margin-top: auto;
+  display: inline-block;
+  background: #4fc3f7;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background 0.18s;
+}
+
+.projects-list a:hover {
+  background: #039be5;
+}
+
+/* Skills list styles */
+
+.skills-section h2 {
+  text-align: center; /* Centers the title */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to the next line if needed */
+  justify-content: center; /* Centers the skills horizontally */
+  gap: 1.5rem; /* Adds spacing between skills */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Removes default list styling */
+}
+
+.skills-list li {
+  background: #4fc3f7; /* Adds a background color for flair */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 150px; /* Fixed width for uniform size */
+  height: 50px; /* Fixed height for uniform size */
+  display: flex;
+  justify-content: center; /* Centers text horizontally */
+  align-items: center; /* Centers text vertically */
+  border-radius: 25px; /* Rounded pill-like appearance */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skills-list li:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact label {
+  font-size: 1rem;
+  color: #2d3e50;
+  font-weight: 500;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: #4fc3f7;
+  box-shadow: 0 0 5px rgba(79, 195, 247, 0.5);
+}
+
+#contact button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background: #4fc3f7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#contact button:hover {
+  background: #039be5;
+}
+/* General section styles for uniform width */
+section {
+  max-width: 90%; /* Covers most of the screen width */
+  margin: 2.5rem auto; /* Centers the sections horizontally */
+  padding: 2rem 2.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+}
+
+/* Specific adjustments for sections if needed */
+.about-me,
+.projects-section,
+.skills-section,
+#contact {
+  max-width: 90%; /* Ensures all sections are uniform */
+}
