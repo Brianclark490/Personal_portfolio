@@ -109,3 +109,58 @@ document.addEventListener("keydown", (e) => {
 document.getElementById("lightbox-modal").addEventListener("click", (e) => {
   if (e.target === e.currentTarget) closeLightbox();
 });
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let isValid = true;
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if (name === "") {
+    showError("name", "Name is required");
+    isValid = false;
+  } else {
+    clearError("name");
+  }
+
+  if (email === "") {
+    showError("email", "Email is required");
+    isValid = false;
+  } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+    showError("email", "Enter a valid email address");
+    isValid = false;
+  } else {
+    clearError("email");
+  }
+
+  if (message === "") {
+    showError("message", "Message is required");
+    isValid = false;
+  } else {
+    clearError("message");
+  }
+
+  if (isValid) {
+    alert("Form submitted successfully!");
+    form.reset();
+  }
+});
+
+["name", "email", "message"].forEach((field) => {
+  form[field].addEventListener("input", () => clearError(field));
+});
+
+function showError(field, message) {
+  const error = document.getElementById(`${field}-error`);
+  error.textContent = message;
+}
+
+function clearError(field) {
+  const error = document.getElementById(`${field}-error`);
+  error.textContent = "";
+}
