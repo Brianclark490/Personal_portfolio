@@ -28,17 +28,21 @@
     />
   </head>
   <body>
-    <header>
-      <h1>Brian Clark</h1>
-      <nav role="navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <div class="header-content">
+        <h1>Brian Clark</h1>
+        <div class="nav-dropdown">
+          <button class="hamburger" onclick="toggleMenu()">☰ Menu</button>
+          <ul class="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
+
     <main>
       <!-- About Me Section -->
       <section id="about" class="about-me">
@@ -52,41 +56,47 @@
 
       <!-- Projects Section -->
       <section id="projects" class="projects-section">
-        <h2>Projects</h2>
+        <div class="projects-header">
+          <h2>Projects</h2>
+          <div class="filter-dropdown">
+            <button class="hamburger" onclick="toggleDropdown()">
+              ☰ Filter Projects
+            </button>
+            <ul class="dropdown-menu">
+              <li onclick="filterProjects('all')">All</li>
+              <li onclick="filterProjects('web')">Web Development</li>
+              <li onclick="filterProjects('design')">Design</li>
+              <li onclick="filterProjects('other')">Other</li>
+            </ul>
+          </div>
+        </div>
+
         <div class="projects-list">
-          <article>
+          <article data-category="web">
             <figure>
-              <img
-                src="placeholder-image.jpg"
-                alt="Placeholder image for Project 1"
-                width="300"
-                height="200"
-              />
+              <img src="placeholder-image.jpg" alt="Project 1" />
               <figcaption>Project 1</figcaption>
             </figure>
-            <h3>Project Title 1</h3>
-            <p>
-              Short description of Project 1. This could include the
-              technologies used and the purpose of the project.
-            </p>
+            <h3>Web Project</h3>
+            <p>Short description of a web development project.</p>
             <a href="#">View Project</a>
           </article>
-
-          <article>
+          <article data-category="design">
             <figure>
-              <img
-                src="placeholder-image.jpg"
-                alt="Placeholder image for Project 2"
-                width="300"
-                height="200"
-              />
+              <img src="placeholder-image.jpg" alt="Project 2" />
               <figcaption>Project 2</figcaption>
             </figure>
-            <h3>Project Title 2</h3>
-            <p>
-              Short description of Project 2. Highlight the key features and
-              challenges overcome during development.
-            </p>
+            <h3>Design Project</h3>
+            <p>Short description of a design project.</p>
+            <a href="#">View Project</a>
+          </article>
+          <article data-category="other">
+            <figure>
+              <img src="placeholder-image.jpg" alt="Project 3" />
+              <figcaption>Project 3</figcaption>
+            </figure>
+            <h3>Other Project</h3>
+            <p>Short description of another type of project.</p>
             <a href="#">View Project</a>
           </article>
         </div>
