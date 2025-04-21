@@ -74,7 +74,11 @@
         <div class="projects-list">
           <article data-category="web">
             <figure>
-              <img src="placeholder-image.jpg" alt="Project 1" />
+              <img
+                src="images/EcoLogo.jpeg"
+                alt="Project 1"
+                onclick="openLightbox(this.src)"
+              />
               <figcaption>Project 1</figcaption>
             </figure>
             <h3>Web Project</h3>
@@ -83,7 +87,11 @@
           </article>
           <article data-category="design">
             <figure>
-              <img src="placeholder-image.jpg" alt="Project 2" />
+              <img
+                src="images/EcoLogo.jpeg"
+                alt="Project 2"
+                onclick="openLightbox(this.src)"
+              />
               <figcaption>Project 2</figcaption>
             </figure>
             <h3>Design Project</h3>
@@ -92,7 +100,11 @@
           </article>
           <article data-category="other">
             <figure>
-              <img src="placeholder-image.jpg" alt="Project 3" />
+              <img
+                src="images/EcoLogo.jpeg"
+                alt="Project 3"
+                onclick="openLightbox(this.src)"
+              />
               <figcaption>Project 3</figcaption>
             </figure>
             <h3>Other Project</h3>
@@ -135,5 +147,9 @@
     </main>
     <footer></footer>
     <script src="script.js"></script>
+    <div id="lightbox-modal" class="lightbox-modal">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-image" src="" alt="Project Image" />
+    </div>
   </body>
 </html>
