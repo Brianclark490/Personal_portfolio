@@ -77,33 +77,35 @@ function filterProjects(category) {
   dropdown.style.display = "none";
 }
 
-// Open the lightbox with the selected image
 function openLightbox(src) {
-  const lightboxModal = document.getElementById("lightbox-modal");
-  const lightboxImage = document.getElementById("lightbox-image");
-
-  lightboxImage.src = src;
-  lightboxModal.style.display = "flex";
+  const lightbox = document.getElementById("lightbox-modal");
+  const img = document.getElementById("lightbox-image");
+  img.src = src;
+  lightbox.classList.add("show");
+  document.body.classList.add("lightbox-open");
 }
 
-// Close the lightbox
 function closeLightbox() {
-  const lightboxModal = document.getElementById("lightbox-modal");
-  lightboxModal.style.display = "none";
+  const lightbox = document.getElementById("lightbox-modal");
+  lightbox.classList.remove("show");
+  document.body.classList.remove("lightbox-open");
+
+  setTimeout(() => {
+    document.getElementById("lightbox-image").src = "";
+  }, 300);
 }
 
-// Add click event listeners to all project images
+// Image click
 document.querySelectorAll(".projects-list img").forEach((img) => {
-  img.addEventListener("click", function () {
-    openLightbox(this.src);
-  });
+  img.addEventListener("click", () => openLightbox(img.src));
 });
 
-// Close lightbox if the user clicks outside the image
-document
-  .getElementById("lightbox-modal")
-  .addEventListener("click", function (event) {
-    if (event.target === this) {
-      closeLightbox();
-    }
-  });
+// Esc key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});
+
+// Click outside content
+document.getElementById("lightbox-modal").addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) closeLightbox();
+});
